@@ -1,0 +1,44 @@
+
+@use 'sass:color'
+@use 'variables'
+
+.container-portifolio
+    height: 100%
+
+    .container-portfolio-inter
+        max-width: variables.$mx-width
+        margin: 0 auto
+        height: 100%
+
+        .container-texts
+            position: relative
+            top: 180px
+            text-align: center
+
+            .title
+                padding: 1rem
+                font-size: 2.5rem
+                font-weight: bold
+
+            p
+                font-size: 1.1rem
+                font-family: sans-serif
+                font-weight: 500
+
+        .container-portfolio-cards
+            background-color: invert(variables.$silver-color)
+            margin-top: 250px
+            display: flex
+            justify-content: space-evenly
+            padding: 1rem
+            align-items: center
+            flex-wrap: wrap
+
+            .container-portfolio-card
+                margin: .5rem
+                width: 250px
+                text-align: center
+            
+                img
+                    width: inherit
+                    height: 450px

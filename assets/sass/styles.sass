@@ -1,0 +1,852 @@
+@use 'sass:color'
+@use 'pattern'
+@use 'variables'
+@use 'settings-js'
+@use 'layout-whatsapp'
+@use 'layout-portfolio'
+@import 'utility'
+@import 'media-queries'
+
+/*------Header------*/
+
+.container-header-top
+    background-color: variables.$light-color
+    height: 90px
+    width: 100%
+    position: fixed
+    box-shadow: inset 0 0 1px rgb(65, 65,65 )
+    top: 0
+    z-index: 999
+
+    /*-----Media queries phone-------*/
+    @include mobile()
+        height: 10%
+        background-color: variables.$header-mobile-color
+        
+    /*-----Media queries tablet-------*/
+    @include tablet()
+        height: 10%
+        background-color: variables.$header-mobile-color
+
+
+    .contaner-button-menu
+        width: 45px
+        height: 40px
+        cursor: pointer
+        display: none
+        
+        /*-----Media queries phone-------*/
+        @include mobile()
+            display: block
+            margin-top: 1rem
+            margin-left: .5rem
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            display: block  
+            margin-top: 1rem
+            margin-left: 1rem 
+                            
+
+        .bar1, .bar2, .bar3
+            width: 30px
+            height: 4px
+            margin: 6px
+            top: 0
+            background-color: variables.$bg-color
+            display: flex
+            text-align: center
+            transition: all .3s ease-out
+
+            /*-----Media queries phone-------*/
+            @include mobile()
+                width: 40px
+                height: 5px
+                margin: 9px
+
+            /*-----Media queries tablet-------*/
+            @include tablet()
+                width: 40px
+                height: 5px
+                margin: 9px
+
+            
+    .container-wd-top
+        max-width: variables.$mx-width
+        margin: auto
+        display: flex
+
+        .container-logo
+            width: 150px
+            height: 100%
+
+            /*-----Media queries phone-------*/
+            @include mobile()
+                display: none
+
+            /*-----Media queries phone-------*/
+            @include tablet()
+                display: none
+
+            img
+                width: 85px
+                height: 85px
+                margin-left: 20px
+                
+        .container-menu
+            width: 80%  
+
+            /*-----Media queries phone-------*/
+            @include mobile()
+                background-color: variables.$header-mobile-color
+                width: 100%
+                display: flex
+                flex-direction: column
+
+
+            /*-----Media queries tablet-------*/
+            @include tablet()
+                background-color: variables.$header-mobile-color
+                width: 100%
+                display: flex
+                flex-direction: column
+
+            .menu
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-wrap: wrap
+                height: 100%
+
+                /*-----Media queries phone-------*/
+                @include mobile()
+                    display: none
+                    text-align: center
+                    padding: 0 0 2rem
+
+
+                /*-----Media queries tablet-------*/
+                @include tablet()
+                    width: 80%
+                    display: none
+                    margin: 0 auto
+                    text-align: center
+                    padding: 0 0 2rem
+                    
+                 
+                li
+                    padding: .3rem
+                    margin: 1rem 1rem 0
+                    position: relative
+                    padding-bottom: 3px    
+
+                    &:hover::before  
+                        left: 5px                                                              
+                        width: 90%
+                        background-color: variables.$bg-color
+
+                        /*-----Media queries phone-------*/
+                        @include mobile()
+                            width: 0
+                            height: 0
+                            background: transparent
+
+                        /*-----Media queries tablet-------*/
+                        @include tablet()
+                            width: 0
+                            height: 0
+                            background: transparent
+
+
+                    a
+                        color: variables.$dark-color
+                        text-transform: capitalize
+                        font-size: 1.2rem
+                        font-weight: bold
+
+                        /*-----Media queries phone-------*/
+                        @include mobile()
+                            font-size: 22px                            
+
+
+                        /*-----Media queries tablet-------*/
+                        @include tablet()
+                            font-size: 22px
+
+
+                        &:hover
+                            color: variables.$bg-color
+                        
+                    #active
+                        color: variables.$bg-color
+                        text-transform: capitalize
+                        font-size: 1.2rem
+                        font-weight: bold 
+
+                        /*-----Media queries phone-------*/
+                        @include mobile()
+                            font-size: 22px
+
+                        /*-----Media queries tablet-------*/
+                        @include tablet()
+                            font-size: 22px
+
+
+                li::before
+                    position: absolute
+                    content: ''
+                    background: transparent
+                    width: 10px
+                    height: 3px
+                    bottom: 0  
+                    left: 33px
+                    transition: all .7s ease
+            
+            .active
+                display: block
+
+
+        .container-button
+            width: 100px
+            display: flex
+            justify-content: center
+            align-items: center
+
+            /*-----Media queries phone-------*/
+            @include mobile()
+                position: absolute
+                top: 17px
+                right: 10px
+
+            /*-----Media queries tablet-------*/
+            @include tablet()
+                position: absolute
+                top: 22px
+                right: 10px
+
+            input[type='checkbox']
+                position: relative
+                width: 60px
+                height: 30px
+                background-color: variables.$silver-color
+                -webkit-appearance: none
+                -moz-appearance: none
+                border-radius: 20px
+                cursor: pointer
+
+            input[type='checkbox']::before
+                position: absolute
+                content: ''
+                width: 34px
+                height: 34px
+                border-radius: 50%
+                left: 0px
+                top: -2px
+                background-color: variables.$text-color
+                transition: .4s ease
+
+            input:checked[type='checkbox']::before
+                left: 30px
+
+            input:checked[type='checkbox']
+                background-color: variables.$dark-color
+                
+
+.container-header-center
+    background-color: rgba(0, 0 , 0, 0.5 )
+    height: 100vh
+    width: 100%
+    background-image: url('../img/banner2.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    
+
+    .container-header-back
+        height: 100vh
+        width: 100%
+        background-color: rgba(0,0 ,0 ,0.7 )
+
+    .container-slogan
+        position: relative
+        transform: translate(10%, 50%)
+        top: 350px
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            top: 200px
+            left: 0px
+            right: 0px
+            width: 350px  
+        
+
+        h1, h2
+            color: variables.$light-color
+            font-size: 2.3rem
+            margin: .5rem
+            letter-spacing: 1px
+            margin-left: 20px
+
+        h2
+            font-size: 1.5rem
+
+            /*-----Media queries-------*/
+            @include mobile()
+                display: none
+
+
+    .container-slogan:before
+        position: absolute
+        content: ''
+        height: 75px
+        width: 5px
+        top: 8px
+        border-radius: 100px
+        background-color: variables.$light-color
+
+        /*-----Media queries-------*/
+        @include mobile()
+            width: 0
+            height: 0
+
+
+    .container-rede-social
+        position: relative
+        transform: translate(25%,50%)
+        width: 50%
+        top: 420px
+
+        /*-----Media queries-------*/
+        @include mobile()
+            top: 300px
+            width: 250px
+          
+        .rede-sociais
+            display: flex
+            margin-left: 100px
+            
+
+            i
+                margin-right: 7px
+                font-size: 1.3rem
+
+            a
+                color: $light-color
+                text-transform: capitalize
+                font-family: sans-serif
+                font-weight: bold
+                transition: .4s ease
+                margin-left: 40px
+
+                /*-----Media queries-------*/
+                @include mobile()
+                    margin-left: -70px
+                    margin-right: 76px
+
+                &:hover
+                    color: variables.$bg-color
+                    border-bottom: 2px solid variables.$bg-color
+                    padding-bottom: .5rem
+
+                    /*-----Media queries-------*/
+                    @include mobile()
+                        border-bottom: 0px
+
+
+    /*------Main------*/
+
+.container-main
+    width: 100%
+
+    .container-about
+        @include container-section()  
+        
+        /*-----Media queries phone-------*/
+        @include mobile()
+            padding-top: 4rem
+            height: 100%
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            padding-top: 7rem
+            height: 100%
+
+
+        .title
+            @extend %pattern-h2
+
+            /*-----Media queries phone-------*/
+            @include mobile()
+                @include h2-mobile
+
+
+            /*-----Media queries tablet-------*/
+            @include tablet()
+                @include h2-mobile
+
+
+
+        .container-about-inter
+            width: 100%
+            display: flex
+            justify-content: space-evenly
+            align-items: center
+
+             /*-----Media queries phone-------*/
+            @include mobile()
+                display: flex
+                flex-wrap: wrap
+
+            /*-----Media queries tablet-------*/
+            @include tablet()
+                display: flex
+                flex-wrap: wrap
+                width: 90%
+                margin: auto
+            
+
+
+            .container-text
+                margin-top: 20px
+                margin-bottom: 0
+
+                h3, p
+                    letter-spacing: 1px
+                    font-family: sans-serif
+                    margin-bottom: 10px
+                    text-transform: capitalize
+
+
+                     /*-----Media queries phone-------*/
+                    @include mobile()
+                        width: 90%
+                        margin: 0 auto
+                        margin: 1rem
+
+
+                    /*-----Media queries tablet-------*/
+                    @include tablet()
+                        width: 90%
+                        margin: 0 auto
+                        margin: 1rem
+
+                p
+                    line-height: 2rem
+                    text-align: left
+
+
+            .container-img
+                width: 380px
+                height: 100%
+
+                img
+                    width: inherit
+                    height: inherit
+
+
+/*----------Curriculo barra---------*/
+        
+.container-cv
+    margin-top: 3rem
+    background-color: variables.$silver-color
+    height: 80px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-wrap: wrap
+
+    /*-----Media queries phone-------*/
+    @include mobile()
+        width: 100%
+        height: 100%
+        padding: 1rem
+
+
+    /*-----Media queries tablet-------*/
+    @include tablet()
+        width: 100%
+        height: 100%
+        padding: 1rem
+    
+
+    p
+        font-size: 1.5rem
+        color: variables.$bg-color
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            margin-bottom: 1rem
+            text-align: center
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            margin-bottom: 1rem
+
+    button
+        padding: 14px 40px
+        background: transparent
+        border: 2px solid variables.$dark-color
+        color: variables.$bg-color
+        font-weight: bold
+        font-size: 1rem
+        transition: .4s ease
+        cursor: pointer
+        margin-left: 2rem
+
+
+        &:active
+            transform: translateY(5px)
+
+        &:hover
+            background-color: variables.$dark-color
+
+/*---------SERVICES-----------*/
+
+.container-services
+    @include container-section()
+    padding-bottom: 5rem
+
+    /*-----Media queries phone-------*/
+    @include mobile()
+        padding-top: 4rem
+        height: 100%
+        
+
+    /*-----Media queries tablet-------*/
+    @include tablet()
+        padding-top: 7rem
+        height: 100%
+
+
+    .title
+        @extend %pattern-h2
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            @include h2-mobile
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            @include h2-mobile
+
+
+    .container-services-cards
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+
+        .container-services-card            
+            width: 30%
+            height: 100%
+            margin: .5rem
+            padding: 1rem 1rem 2rem
+            border-radius: 5px
+            text-align: left
+
+            /*-----Media queries-------*/
+            @include mobile()
+                width: 90%
+                margin: 0 auto
+            
+
+            h3
+                margin: 1rem 0
+                text-transform: uppercase
+                font-family: sans-serif
+                font-weight: bold
+                letter-spacing: 1px
+                
+            p
+                letter-spacing: 1px
+                line-height: 1.5rem
+
+
+/*---------SKILLS-----------*/
+
+
+.container-skills-background
+    background-image: url('/assets/img/banner3.jpg')
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+    .container-skills
+        @include container-section()
+        padding-bottom: 5rem
+
+        /*-----Media queries-------*/
+        @include mobile()
+            padding-top: 4rem
+            height: 100%
+
+        /*-----Media queries-------*/
+        @include tablet()
+            padding-top: 7rem
+
+
+    .title
+        @extend %pattern-h2
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            @include h2-mobile
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            @include h2-mobile
+
+
+    .container-skills-cards
+        padding: 1rem
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        width: 100%
+
+        .container-skills-card
+            width: 208px
+            height: 100%
+            margin-bottom: 15px
+            margin-left: 15px
+            margin-right: 15px
+            background-color: variables.$light-color
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            border-radius: 0 20px
+
+            img
+                width: 150px
+                height: 150px
+                padding: 1rem
+
+            #html
+                width: 120px
+            
+
+/*--------CONTACTS--------*/
+
+.container-contact
+    @include container-section()
+    height: 100%
+
+    /*-----Media queries-------*/
+    @include mobile()
+        height: 100%
+        padding-top: 4rem
+
+    /*-----Media queries-------*/
+    @include tablet()
+        padding-top: 7rem
+
+    .title
+        @extend %pattern-h2
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            @include h2-mobile
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            @include h2-mobile
+
+
+    .container-contact-inter
+        display: flex
+        flex-wrap: wrap
+
+    .container-contact-texts
+        width: 53%
+        margin-top: 150px
+
+        /*-----Media queries phone-------*/
+        @include mobile()
+            width: 90%
+            margin: 0 auto
+
+
+        /*-----Media queries tablet-------*/
+        @include tablet()
+            width: 90%
+            margin: 0 auto
+
+        h3, p
+            text-align: center
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 25px
+            margin: 1rem
+            font-family: sans-serif
+
+            
+
+        p
+            letter-spacing: 1.5px
+            line-height: 2rem
+            font-weight: normal
+            text-transform: none
+            font-size: 18px
+            text-align: left
+
+
+    .container-form
+        height: 100%
+        width: 44%
+        margin: 0 auto 
+
+        /*-----Media queries-------*/
+        @include mobile()
+            width: 100%
+            margin: 0 auto
+
+        .inputs-inter
+            width: 500px
+            padding: 1rem
+            margin-left: 1rem               
+            
+            div
+                margin-bottom: .6rem                
+
+            label
+                font-family: sans-serif
+                font-size: 18px
+                font-weight: 500
+                color: variables.$text-color
+                
+            
+            input
+                border: 1px solid variables.$silver-color
+                border-radius: 5px
+                padding: 7px
+                width: 300px
+
+                &:hover
+                    border: 1px solid color.scale($dark-color, $lightness: +60%)
+                
+
+            textarea
+                border: 1px solid variables.$silver-color
+                padding: 1rem
+                border-radius: 5px
+                resize: none
+                width: 65%
+                    
+
+                &:hover
+                    border: 1px solid color.scale($dark-color, $lightness: +60%)
+                
+            .content-alert
+                color: variables.$red-color
+                font-family: sans-serif
+                font-weight: 600
+                font-size: .8rem
+                margin-top: .1rem
+                margin-left: .3rem
+                display: none
+
+        .container-contact-btn
+            margin-left: 2rem
+            position: relative
+
+            .btn 
+                font-family: sans-serif
+                font-size: 16px
+                padding: 7px 22px
+                text-align: center
+                background-color: variables.$bg-color
+                color: variables.$light-color
+                cursor: pointer
+            
+            .btn::before
+                position: absolute
+                content: ''
+                width: 20px
+                height: 2px
+                bottom: 5px
+                left: 35px
+                transition: .4s ease-out
+
+            .btn:hover::before
+                width: 10%
+                left: 20px
+                background-color: variables.$light-color
+                    
+                /*-----Media queries phone-------*/
+                @include mobile()
+                    width: 0%
+
+                /*-----Media queries tablet-------*/
+                @include tablet()
+                    width: 0%
+
+
+/*-------FOOTER-------*/
+
+.container-footer
+    max-width: 100%
+    margin-top: 5rem
+    background-color: variables.$silver-color
+
+    .container-footer-inter
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+        .container-img
+            margin: 1rem 0 
+            width: 70px
+            height: 70px
+
+            img
+                width: inherit
+                height: inherit
+
+        .container-contacts
+            text-align: center
+            margin: 1rem 0 2rem
+
+            p
+                font-style: normal
+                font-weight: 500
+                color: variables.$bg-color
+                letter-spacing: 1px
+                padding: .3rem
+                
+            i
+                margin-right: .3rem
+        
+        .container-show-jobs
+            display: flex
+            flex-direction: column            
+
+            a
+                color: variables.$bg-color
+                padding: .3rem
+                text-align: center
+
+            i
+                 margin-right: .4rem
+                 font-size: 1.5rem
+
+        span
+            font-family: sans-serif
+            font-size: 14px
+            padding: 0 0 1rem
+            letter-spacing: 1px
+            color: variables.$dark-color
+
+
+        
+
+        

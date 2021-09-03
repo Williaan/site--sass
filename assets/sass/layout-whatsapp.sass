@@ -1,0 +1,35 @@
+@use 'variables'
+@import 'media-queries'
+    
+.button-float-whats
+    position: fixed
+    top: 560px
+    background-color: green
+    right: 15px
+    width: 60px
+    height: 60px
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    display: none
+    transform: scale(1)
+
+    @include tablet()
+        top: 930px
+
+    @include mobile()
+        top: 550px
+
+.whatPopup
+    display: block
+
+
+    i
+        text-align: center
+        position: relative
+        font-size: 2.5rem
+        top: 11px
+        left: 13px
+        color: variables.$light-color
+       
+    

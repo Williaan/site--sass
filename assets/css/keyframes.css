@@ -1,0 +1,92 @@
+
+/*------MENSAGEM DE BOAS VINDAS------*/
+
+.container-slogan h1{
+	animation-name: Title;
+	animation-duration: 6s;
+	animation-iteration-count: ease;
+	
+}
+@keyframes Title{
+	0%{
+		transform: translate(50%);
+		opacity: 0%;
+	}
+	50%{
+		transform: translate(0%);
+		opacity: 1;
+	}
+}
+
+.container-slogan h2{
+    animation-name: SubTitle;
+    animation-duration: 8s;
+    animation-iteration-count: ease-in;
+}
+
+@keyframes SubTitle {
+    0%{
+        transform: translate(70%);
+        opacity: 0%;
+    }
+    50%{
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
+
+/*------BARRA LATETRAL DE BOAS VINDAS------*/
+
+.container-slogan::before{
+    animation-name: SubBarraLateral;
+    animation-duration: 7s;
+    animation-iteration-count: ease-in;
+}
+
+@keyframes SubBarraLateral {
+    0%{
+        transform: translateY(80%);
+        opacity: 0%;
+    }
+    60%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+/*------BANNER IMGE------*/
+
+.container-header-center{
+    animation-name: BannerZoom;
+    animation-iteration-count: ease-in;
+    animation-duration: 6s;
+}
+
+@keyframes BannerZoom{
+    0%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+
+
+/*-----------Animation Button Whatsapp---------*/
+
+
+.button-float-whats{
+    animation-name: BtnWhatsZoom;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+
+}
+
+@keyframes BtnWhatsZoom{
+    0%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,26 @@
+@use 'variables'
+
+//Color background
+
+.bg-color-black
+    background-color: variables.$dark-color
+    color: variables.$light-color
+
+
+// Menu animation responsive
+
+.active .bar1
+    -moz-transform: rotate(-45deg) translate(-14px, 13px)
+    -webkit-transform: rotate(-45deg) translate(-14px, 13px)
+    transform: rotate(-45deg) translate(-14px, 14px)    
+
+	
+.active .bar2
+    opacity: 0
+
+	
+.active .bar3
+    -moz-transform: rotate(-45deg) translate(-5px, -5px)
+    -webkit-transform: rotate(45deg) translate(-5px, -5px)
+    transform: rotate(45deg) translate(-5px, -5px)
+
